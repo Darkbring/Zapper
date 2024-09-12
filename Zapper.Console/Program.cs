@@ -40,10 +40,10 @@ using (var db = new ZapperDb())
 
         bool hasFlag = ((int)profile.Settings & 7) == 7;
 
-        Console.WriteLine($"Profile Id: {profile.Id} Setting Value 7: {(hasFlag ? "Match" : "Unmatch")}");
+        Console.WriteLine($"Profile Id: {profile.Id} Value 7: {(hasFlag ? "Match" : "Unmatch")} Setting: {profile.Settings}");
 
         hasFlag = ((int)profile.Settings & 4) == 4;
-        Console.WriteLine($"Profile Id: {profile.Id} Setting Value 4: {(hasFlag ? "Match" : "Unmatch")}");
+        Console.WriteLine($"Profile Id: {profile.Id} Value 4: {(hasFlag ? "Match" : "Unmatch")} Setting: {profile.Settings}");
     }
 
     db.WriteJson(db.Profiles, "./profile.json");
