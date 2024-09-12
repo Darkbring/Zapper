@@ -38,11 +38,11 @@ using (var db = new ZapperDb())
     {
         int flag = (int)profile.Settings;
 
-        bool hasFlag = profile.Settings.HasFlag((SettingFlags)7);
+        bool hasFlag = ((int)profile.Settings & 7) == 7;
 
         Console.WriteLine($"Profile Id: {profile.Id} Setting Value 7: {(hasFlag ? "Match" : "Unmatch")}");
 
-        hasFlag = profile.Settings.HasFlag((SettingFlags)4);
+        hasFlag = ((int)profile.Settings & 4) == 4;
         Console.WriteLine($"Profile Id: {profile.Id} Setting Value 4: {(hasFlag ? "Match" : "Unmatch")}");
     }
 
